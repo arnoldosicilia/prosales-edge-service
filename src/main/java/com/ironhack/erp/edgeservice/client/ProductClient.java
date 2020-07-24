@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient("product-service")
+@FeignClient(name = "product-service", url = "https://prosales-product.herokuapp.com")
 public interface ProductClient {
     @GetMapping("/products")
     public List<ProductViewModel> findAll();
